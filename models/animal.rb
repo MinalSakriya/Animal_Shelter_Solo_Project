@@ -12,7 +12,7 @@ class Animal
     @name = options['name']
     @breed = options['breed']
     @type = options['type']
-    @admission_date = options['admission_date'].to_i
+    @admission_date = options['admission_date']
     @adoptable = options['adoptable']
     @owner_id = options['owner_id'].to_i if options['owner_id']
   end
@@ -34,7 +34,7 @@ class Animal
 
   # This will give list of all the aniamls with their admission date.
   def self.all()
-    sql = "SELECT * FROM animals"
+    sql = "SELECT * FROM animals ORDER BY name ASC"
     all_animals = SqlRunner.run(sql)
     return all_animals.map{ |animal| Animal.new(animal)}
   end

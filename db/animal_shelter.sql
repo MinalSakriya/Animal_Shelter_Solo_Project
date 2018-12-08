@@ -12,7 +12,7 @@ CREATE TABLE animals (
   name VARCHAR(255),
   breed VARCHAR(255),
   type VARCHAR(255),
-  admission_date INT,
+  admission_date VARCHAR(255),
   adoptable BOOLEAN,
   owner_id INT REFERENCES owners(id) ON DELETE CASCADE
 );

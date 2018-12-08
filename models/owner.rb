@@ -12,6 +12,10 @@ class Owner
     @last_name = options['last_name']
   end
 
+  def pretty_name()
+    return "#{@first_name} #{@last_name}"
+  end
+
   def save()
     sql = "INSERT INTO owners (first_name, last_name) VALUES ($1, $2) RETURNING id"
     values = [@first_name, @last_name]

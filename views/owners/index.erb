@@ -1,0 +1,23 @@
+<h1>All Owners and their adopted animals</h1>
+<hr />
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Adopted Animals</th>
+  </tr>
+  <% for owner in @owners %>
+      <tr>
+        <td><%= owner.pretty_name %></td>
+        <td>
+          <% for animal in owner.adopted_animals %>
+              <p>
+                <b>Name:</b> <%= animal.name %>,
+                <b>Breed:</b> <%= animal.breed %>,
+                <b>Type:</b> <%= animal.type %>
+              </p>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+</table>
