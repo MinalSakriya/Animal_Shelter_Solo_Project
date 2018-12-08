@@ -36,6 +36,9 @@ owner3 = Owner.new({
     })
    owner5.save()
 
+   owner5.last_name = "Goulding"
+   owner5.update()
+
 
 animal1 = Animal.new({
     'name' => 'Archie',
@@ -128,8 +131,9 @@ animal5 = Animal.new({
       animal9.save()
       animal9.owner_id = owner3.id
       animal9.assign_animal_to_owner()
-
-
+      animal9.breed = "Rattlesnake"
+      animal9.update()
+      owner2.adopted_animals()
 
 
 

@@ -29,7 +29,7 @@ class AnimalTest < MiniTest::Test
       'name' => 'Davy',
       'breed' => "Tammy",
       'type' => 'Cat",
-      'admission_date' =>'19.09.2018',
+      'admission_date' => '19.09.2018',
       'adoptable' => 'No'
       })
       @animal1 = Animal.new(animal1)

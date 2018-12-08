@@ -25,12 +25,27 @@ class Animal
     @id = result[0]["id"].to_i
   end
 
-# This will give list of all the aniamls with their admission date.
+  def update()
+    sql = "UPDATE animals SET (name, breed, type, admission_date, adoptable, owner_id) = ($1, $2, $3, $4, $5, $6) WHERE id = $7"
+    values = [@name, @breed, @type, @admission_date, @adoptable, @owner_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
+
+  # This will give list of all the aniamls with their admission date.
   def self.all()
     sql = "SELECT * FROM animals"
     all_animals = SqlRunner.run(sql)
     return all_animals.map{ |animal| Animal.new(animal)}
   end
+
+  def self.find(id)
+    sql = "SELECT * FROM animals WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Animal.new(result.first)
+  end
+
 
   def update_adoptable()
     sql = "UPDATE animals SET adoptable = $1 WHERE id = $2"
