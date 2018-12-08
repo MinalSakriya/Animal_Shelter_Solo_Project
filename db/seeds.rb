@@ -3,8 +3,8 @@ require_relative('../models/owner.rb')
 
 require ('pry')
 
-# Animal.delete_all()
-# Owner.delete_all()
+Animal.delete_all()
+Owner.delete_all()
 
 owner1 = Owner.new({
   'first_name' => 'Sam',
@@ -62,7 +62,7 @@ animal3 = Animal.new({
     'breed' => 'Ragdoll',
     'type' => 'Cat',
     'admission_date' => '19.09.2018',
-    'adoptable' => 'No',
+    'adoptable' => 'No'
 
     })
   animal3.save()
@@ -72,7 +72,7 @@ animal4 = Animal.new({
     'breed' => 'American Shorthair',
     'type' => 'Cat',
     'admission_date' => '1.02.2018',
-    'adoptable' => 'No',
+    'adoptable' => 'No'
 
     })
   animal4.save()
@@ -82,8 +82,8 @@ animal5 = Animal.new({
     'breed' => 'Berkshire',
     'type' => 'Pig',
     'admission_date' => '24.02.2018',
-    'adoptable' => 'Yes',
-    
+    'adoptable' => 'Yes'
+
     })
   animal5.save()
 
@@ -92,20 +92,46 @@ animal5 = Animal.new({
       'breed' => 'Jersey Cattle',
       'type' => 'Cow',
       'admission_date' => '24.02.2018',
-      'adoptable' => 'Yes',
+      'adoptable' => 'Yes'
 
       })
     animal6.save()
 
   animal7 = Animal.new({
       'name' => 'Alfie',
-      'breed' => 'Higland',
+      'breed' => 'Highland',
       'type' => 'Horse',
-      'admission_date' => '24.02.2018',
+      'admission_date' => '20.02.2018',
       'adoptable' => 'Yes',
       'owner_id' => owner2.id
       })
     animal7.save()
+
+    animal8 = Animal.new({
+        'name' => 'Mali',
+        'breed' => 'Higland',
+        'type' => 'Goat',
+        'admission_date' => '30.03.2018',
+        'adoptable' => 'Yes'
+        })
+      animal8.save()
+      animal8.adoptable = "No"
+      animal8.update_adoptable()
+
+    animal9 = Animal.new({
+          'name' => 'Slither',
+          'breed' => 'Rattle',
+          'type' => 'Snake',
+          'admission_date' => '10.03.2018',
+          'adoptable' => 'Yes'
+          })
+      animal9.save()
+      animal9.owner_id = owner3.id
+      animal9.assign_animal_to_owner()
+
+
+
+
 
 
 binding.pry
