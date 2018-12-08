@@ -7,29 +7,37 @@ require ('pry')
 # Owner.delete_all()
 
 owner1 = Owner.new({
-  'id' => 1,
   'first_name' => 'Sam',
   'last_name' => 'Mitchell'
   })
   owner1.save()
 
 owner2 = Owner.new({
-  'id' => 2,
   'first_name' => 'Ben',
   'last_name' => 'Kerr'
   })
   owner2.save()
 
 owner3 = Owner.new({
-  'id' => 3,
   'first_name' => 'Kevin',
   'last_name' => 'Boyd'
   })
  owner3.save()
 
+ owner4 = Owner.new({
+   'first_name' => 'Zoe',
+   'last_name' => 'Potter'
+   })
+  owner4.save()
+
+  owner5 = Owner.new({
+    'first_name' => 'Lee',
+    'last_name' => 'Smith'
+    })
+   owner5.save()
+
 
 animal1 = Animal.new({
-    'id' => 1,
     'name' => 'Archie',
     'breed' => 'Labrador',
     'type' => 'Dog',
@@ -40,8 +48,7 @@ animal1 = Animal.new({
   animal1.save()
 
 animal2 = Animal.new({
-    'id' => 2,
-    'name' => 'Tom',
+    'name' => 'Tommy',
     'breed' => 'Cocker Spaniel',
     'type' => 'Dog',
     'admission_date' => '17.07.2018',
@@ -51,15 +58,55 @@ animal2 = Animal.new({
   animal2.save()
 
 animal3 = Animal.new({
-    'id' => 3,
-    'name' => 'Davy',
-    'breed' => 'Tammy',
+    'name' => 'Fluffy',
+    'breed' => 'Ragdoll',
     'type' => 'Cat',
     'admission_date' => '19.09.2018',
     'adoptable' => 'No',
-    'owner_id' => owner3.id
+
     })
   animal3.save()
+
+animal4 = Animal.new({
+    'name' => 'Fido',
+    'breed' => 'American Shorthair',
+    'type' => 'Cat',
+    'admission_date' => '1.02.2018',
+    'adoptable' => 'No',
+
+    })
+  animal4.save()
+
+animal5 = Animal.new({
+    'name' => 'Percy',
+    'breed' => 'Berkshire',
+    'type' => 'Pig',
+    'admission_date' => '24.02.2018',
+    'adoptable' => 'Yes',
+    
+    })
+  animal5.save()
+
+  animal6 = Animal.new({
+      'name' => 'Daisy',
+      'breed' => 'Jersey Cattle',
+      'type' => 'Cow',
+      'admission_date' => '24.02.2018',
+      'adoptable' => 'Yes',
+
+      })
+    animal6.save()
+
+  animal7 = Animal.new({
+      'name' => 'Alfie',
+      'breed' => 'Higland',
+      'type' => 'Horse',
+      'admission_date' => '24.02.2018',
+      'adoptable' => 'Yes',
+      'owner_id' => owner2.id
+      })
+    animal7.save()
+
 
 binding.pry
 nil

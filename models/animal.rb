@@ -14,7 +14,7 @@ class Animal
     @type = options['type']
     @admission_date = options['admission_date'].to_i
     @adoptable = options['adoptable']
-    @owner_id = options['owner_id'].to_i
+    @owner_id = options['owner_id'].to_i if options['owner_id']
   end
 
 # This is to CREATE
@@ -30,6 +30,17 @@ class Animal
     sql = "SELECT * FROM animals"
     all_animals = SqlRunner.run(sql)
     return all_animals.map{ |animal| Animal.new(animal)}
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM animals"
+    SqlRunner.run(sql)
+  end
+
+  def delete()
+    sql = "DELETE FROM animals WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
   end
 
 
