@@ -1,0 +1,22 @@
+  <h1>Edit Animal</h1>
+
+
+
+  <form action="/animalshelter/animal/<%= @animal.id %>" method="post">
+
+    <p><b>Name:</b> <%= @animal.name %></p>
+    <p><b>Breed:</b> <%= @animal.breed %></p>
+    <p><b>Adoptable:</b>
+        <input type="radio" name="adoptable" value="t"
+        <% if @animal.adoptable == "t" %> checked="checked" <% end %>
+        <% if @animal.owner_id != nil %> disabled <% end %>>Yes
+
+        <input type="radio" name="adoptable" value="f"
+        <% if @animal.adoptable == "f" %> checked="checked" <% end %>
+        <% if @animal.owner_id != nil %> disabled <% end %>>No<br>
+    </p>
+    <p><b>Admission Date:</b> <%= @animal.admission_date %></p>
+    <p><b>Adopted:</b> <% if @animal.owner_id != nil %> Yes <% else %> No <% end %></p>
+    <input  type="submit" value="Save">
+    <p><a class="button" href="/animalshelter/animals"</a>Back</p>
+  </form>

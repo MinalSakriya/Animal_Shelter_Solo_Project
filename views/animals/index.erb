@@ -8,6 +8,7 @@
     <th>Type</th>
     <th>Adoptable</th>
     <th>Admission Date</th>
+    <th>Adopted</th>
   </tr>
   <% for animal in @animals %>
       <tr>
@@ -16,6 +17,7 @@
         <td><%= animal.type %></td>
         <td><%= animal.adoptable %></td>
         <td><%= animal.admission_date %></td>
+        <td> <% if animal.owner_id != nil %> Yes <% else %> No <% end %></td>
       </tr>
   <% end %>
 </table>

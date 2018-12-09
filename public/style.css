@@ -2,3 +2,21 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
+
+input[type="radio"]{
+  margin: 0 5px 0 10px;
+}
+
+.button {
+  text-decoration: none;
+  color: black;
+  padding:5px 15px;
+  margin: 10px;
+  background:#ccc;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: grey;
+
+}
