@@ -10,13 +10,48 @@ input[type="radio"]{
 .button {
   text-decoration: none;
   color: black;
-  padding:5px 15px;
-  margin: 10px;
+  padding:5px 10px;
+  margin: 5px;
   background:#ccc;
   border:0 none;
   cursor:pointer;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   background-color: grey;
+}
 
+input[type=submit] {
+    width: 60px;  height: 100px;
+
+}
+
+.logo img {
+  width: 200px;
+  height: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: Helvetica;
+}
+
+.flex-container {
+  display: flex;
+  background-color: orange;
+}
+
+.child-div {
+  background-color: orange;
+  margin: 10px;
+  padding: 30px;
+  font-size: 20px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 700px;
 }
