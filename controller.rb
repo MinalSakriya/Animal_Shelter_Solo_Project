@@ -5,6 +5,10 @@ require_relative('./models/animal.rb')
 require_relative('./models/owner.rb')
 also_reload('./models/*')
 
+get '/animalshelter' do
+  erb(:home)
+end
+
 # Index
 get '/animalshelter/animals' do
   @animals = Animal.all()
@@ -25,4 +29,16 @@ post '/animalshelter/animal/:id' do
   @animals = Animal.new(params)
   @animals.update_adoptable()
   redirect("/animalshelter/animal/#{params[:id]}/edit")
+end
+
+get '/animalshelter/animal/adoption' do
+  @animals = Animal.all_unadopted_adoptable_animals()
+  @owners = Owner.all()
+  erb(:"animals/adoption")
+end
+
+post '/animalshelter/animal/adoption/done' do
+  @animal = Animal.new(params)
+  @animal.assign_animal_to_owner()
+  redirect("/animalshelter/owners")
 end
