@@ -134,7 +134,7 @@ animal5 = Animal.new({
       animal9.breed = "Rattlesnake"
       animal9.update()
       owner2.adopted_animals()
-
+      Animal.all_unadopted_adoptable_animals()
 
 
 

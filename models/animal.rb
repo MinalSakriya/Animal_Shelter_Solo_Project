@@ -59,6 +59,12 @@ class Animal
     SqlRunner.run(sql, values)
   end
 
+  def self.all_unadopted_adoptable_animals()
+    sql = "SELECT * FROM animals WHERE adoptable = 't' AND owner_id IS NULL ORDER BY name ASC"
+    all_unadopted_adoptable_animals = SqlRunner.run(sql)
+    return all_unadopted_adoptable_animals.map{ |animal| Animal.new(animal)}
+  end
+
   def self.delete_all()
     sql = "DELETE FROM animals"
     SqlRunner.run(sql)

@@ -1,0 +1,22 @@
+<h1>Adoption</h1>
+<form action="/animalshelter/animal/adoption/done" method="post">
+  <p>
+  <label for="animals">Animals: </label>
+  <select name="id">
+    <% for animal in @animals %>
+      <option value=<%= animal.id %>> <%= animal.name%></option>
+    <% end %>
+  </select>
+  </p>
+
+  <p>
+  <label for="owners">Owners: </label>
+  <select name="owner_id">
+    <% for owner in @owners %>
+      <option value=<%= owner.id %>> <%= owner.pretty_name()%></option>
+    <% end %>
+  </select>
+  </p>
+  <input  type="submit" value="Save">
+  <a class="button" href="/animalshelter"</a>Back
+</form>
