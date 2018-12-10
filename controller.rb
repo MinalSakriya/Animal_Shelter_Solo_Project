@@ -42,3 +42,25 @@ post '/animalshelter/animal/adoption/done' do
   @animal.assign_animal_to_owner()
   redirect("/animalshelter/owners")
 end
+
+get '/animalshelter/animal/new' do
+  @animals = Animal.all()
+  erb(:"animals/new")
+end
+
+post '/animalshelter/animal' do
+  @animal = Animal.new(params)
+  @animal.save()
+  redirect("/animalshelter/animals")
+end
+
+get '/animalshelter/owner/new' do
+  @owner = Owner.all()
+  erb(:"owners/new")
+end
+
+post '/animalshelter/owner' do
+  @owner = Owner.new(params)
+  @owner.save()
+  redirect("/animalshelter/owners")
+end
