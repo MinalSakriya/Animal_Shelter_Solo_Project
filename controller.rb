@@ -64,3 +64,15 @@ post '/animalshelter/owner' do
   @owner.save()
   redirect("/animalshelter/owners")
 end
+
+post '/animalshelter/animal/:id/delete' do
+  animal = Animal.find(params[:id])
+  animal.delete()
+  redirect("/animalshelter/animals")
+end
+
+# post '/animalshelter/owner/:id/delete' do
+#   owner = Owner.find(params[:id])
+#   owner.delete()
+#   redirect('/animalshelter/owners')
+# end

@@ -18,5 +18,9 @@
     <p><b>Admission Date:</b> <%= @animal.admission_date %></p>
     <p><b>Adopted:</b> <% if @animal.owner_id != nil %> Yes <% else %> No <% end %></p>
     <input  type="submit" value="Save">
-    <a class="button" href="/animalshelter/animals"</a>Back
-  </form>
+    <a class="button" href="/animalshelter/animals">Back</a>
+</form>
+
+      <form action="/animalshelter/animal/<%= @animal.id %>/delete" method="post">
+      <p><input type="submit" value="Delete Animal"></p>
+      </form>
