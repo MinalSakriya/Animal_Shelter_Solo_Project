@@ -3,11 +3,15 @@
 
 <table style="width:100%">
   <tr>
+    <th></th>
     <th>Name</th>
     <th>Adopted Animals</th>
   </tr>
   <% for owner in @owners %>
       <tr>
+        <td><form action="/animalshelter/owner/<%= owner.id %>/delete" method="post">
+        <p><input type="submit" value="Delete Owner"></p>
+        </form></td>
         <td><%= owner.pretty_name %></td>
         <td>
           <% for animal in owner.adopted_animals %>
@@ -21,6 +25,5 @@
       </tr>
   <% end %>
 </table>
-<p><a class="button" href="/animalshelter"</a>Back
-
-  
+<p><a class="button" href="/animalshelter">Back</a>
+  <a class="button" href="/animalshelter/owner/new">Add Owner</a>

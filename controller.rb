@@ -71,8 +71,8 @@ post '/animalshelter/animal/:id/delete' do
   redirect("/animalshelter/animals")
 end
 
-# post '/animalshelter/owner/:id/delete' do
-#   owner = Owner.find(params[:id])
-#   owner.delete()
-#   redirect('/animalshelter/owners')
-# end
+post '/animalshelter/owner/:id/delete' do
+  owner = Owner.find(params[:id])
+  owner.delete()
+  redirect('/animalshelter/owners')
+end
