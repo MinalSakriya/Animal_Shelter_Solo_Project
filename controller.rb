@@ -54,6 +54,18 @@ post '/animalshelter/animal' do
   redirect("/animalshelter/animals")
 end
 
+
+get '/animalshelter/owner/:id/edit' do
+  @owner = Owner.find(params[:id])
+  erb(:"owners/edit")
+end
+
+post '/animalshelter/owner/:id' do
+  @owners = Owner.new(params)
+  @owners.update()
+  redirect("/animalshelter/owners")
+end
+
 get '/animalshelter/owner/new' do
   @owner = Owner.all()
   erb(:"owners/new")
