@@ -61,5 +61,4 @@ class Owner
     SqlRunner.run(sql, values)
   end
 
-
 end

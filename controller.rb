@@ -27,8 +27,8 @@ end
 
 post '/animalshelter/animal/:id' do
   @animals = Animal.new(params)
-  @animals.update_adoptable()
-  redirect("/animalshelter/animal/#{params[:id]}/edit")
+  @animals.update()
+  redirect("/animalshelter/animals")
 end
 
 get '/animalshelter/animal/adoption' do
