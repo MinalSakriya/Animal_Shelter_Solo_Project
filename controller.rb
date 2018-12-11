@@ -44,7 +44,6 @@ post '/animalshelter/animal/adoption/done' do
 end
 
 get '/animalshelter/animal/new' do
-  @animals = Animal.all()
   erb(:"animals/new")
 end
 

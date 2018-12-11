@@ -3,23 +3,29 @@
 
 <table style="width:100%">
   <tr>
-    <th></th>
+
     <th>Name</th>
     <th>Breed</th>
     <th>Type</th>
     <th>Adoptable</th>
     <th>Admission Date</th>
     <th>Adopted</th>
+    <th></th>
+    <th></th>
   </tr>
   <% for animal in @animals %>
       <tr>
-        <td><p><a class="button" href="/animalshelter/animal/<%= animal.id %>/edit"</a>Edit</p></td>
         <td><%= animal.name %></td>
         <td><%= animal.breed %></td>
         <td><%= animal.type %></td>
         <td><% if animal.adoptable == "t" %> Yes <% else %> No <% end %></td>
         <td><%= animal.admission_date %></td>
         <td> <% if animal.owner_id != nil %> Yes <% else %> No <% end %></td>
+        <td><form action="/animalshelter/animal/<%= animal.id %>/delete" method="post">
+          <p><input type="submit" value="Delete Animal"></p>
+          </form></td>
+
+        <td><p><a class="button" href="/animalshelter/animal/<%= animal.id %>/edit"</a>Edit</p></td>
       </tr>
   <% end %>
 </table>
