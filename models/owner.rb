@@ -30,7 +30,7 @@ class Owner
   end
 
   def self.all()
-    sql = "SELECT * FROM owners"
+    sql = "SELECT * FROM owners ORDER BY first_name ASC"
     all_owners = SqlRunner.run(sql)
     return all_owners.map{ |owner| Owner.new(owner)}
   end
@@ -55,7 +55,14 @@ class Owner
     SqlRunner.run(sql)
   end
 
+  def unadopt_animal()
+    sql = "UPDATE animals SET owner_id = NULL WHERE owner_id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def delete()
+    unadopt_animal()
     sql = "DELETE FROM owners WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)

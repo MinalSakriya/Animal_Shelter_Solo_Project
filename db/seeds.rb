@@ -36,6 +36,12 @@ owner3 = Owner.new({
     })
    owner5.save()
 
+   owner6 = Owner.new({
+     'first_name' => 'Mill',
+     'last_name' => 'Fan'
+     })
+    owner6.save()
+
    owner5.last_name = "Goulding"
    owner5.update()
 
@@ -136,7 +142,17 @@ animal5 = Animal.new({
       owner2.adopted_animals()
       Animal.all_unadopted_adoptable_animals()
 
-
+      animal10 = Animal.new({
+          'name' => 'Bali',
+          'breed' => 'Higland',
+          'type' => 'Goat',
+          'admission_date' => '30.03.2018',
+          'adoptable' => 'Yes'
+          })
+        animal10.save()
+        animal10.owner_id = owner6.id
+        animal10.assign_animal_to_owner()
+        owner6.delete()
 
 binding.pry
 nil
