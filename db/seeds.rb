@@ -144,7 +144,7 @@ animal5 = Animal.new({
 
       animal10 = Animal.new({
           'name' => 'Bali',
-          'breed' => 'Higland',
+          'breed' => 'Highland',
           'type' => 'Goat',
           'admission_date' => '30.03.2018',
           'adoptable' => 'Yes'
@@ -153,7 +153,8 @@ animal5 = Animal.new({
         animal10.owner_id = owner6.id
         animal10.assign_animal_to_owner()
         owner6.delete()
-        Animal.find('Rattlesnake')
+        Animal.find_by_breed('Rattlesnake')
+        Animal.find_by_type('Goat')
 
 binding.pry
 nil

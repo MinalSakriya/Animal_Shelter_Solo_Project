@@ -76,7 +76,7 @@ class Animal
     SqlRunner.run(sql, values)
   end
 
-  def self.find(breed)
+  def self.find_by_breed(breed)
     sql = "SELECT * FROM animals WHERE breed = $1"
     values = [breed]
     breed_hash = SqlRunner.run(sql, values)
@@ -84,6 +84,13 @@ class Animal
     return result
   end
 
+  def self.find_by_type(type)
+    sql = "SELECT * FROM animals WHERE type = $1"
+    values = [type]
+    type_hash = SqlRunner.run(sql, values)
+    result = Animal.new(type_hash.first)
+    return result
+  end
 
 
 
