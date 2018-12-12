@@ -76,6 +76,14 @@ class Animal
     SqlRunner.run(sql, values)
   end
 
+  def self.find(breed)
+    sql = "SELECT * FROM animals WHERE breed = $1"
+    values = [breed]
+    breed_hash = SqlRunner.run(sql, values)
+    result = Animal.new(breed_hash.first)
+    return result
+  end
+
 
 
 

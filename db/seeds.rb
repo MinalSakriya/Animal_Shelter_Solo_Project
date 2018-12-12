@@ -153,6 +153,7 @@ animal5 = Animal.new({
         animal10.owner_id = owner6.id
         animal10.assign_animal_to_owner()
         owner6.delete()
+        Animal.find('Rattlesnake')
 
 binding.pry
 nil
