@@ -87,3 +87,17 @@ post '/animalshelter/owner/:id/delete' do
   owner.delete()
   redirect('/animalshelter/owners')
 end
+
+get '/animalshelter/animal/breed' do
+  @animal = Animal.find_by_breed(params[:breed])
+  erb(:"animals/search")
+end
+
+get '/animalshelter/animal/type' do
+  @animal = Animal.find_by_type(params[:type])
+  erb(:"animals/search")
+end
+
+get '/search' do
+  erb(:"animals/search")
+end

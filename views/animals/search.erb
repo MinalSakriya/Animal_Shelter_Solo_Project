@@ -1,0 +1,52 @@
+<div align = "center">
+
+<h1>Search by Breed and Type</h1>
+
+  <form action="/animalshelter/animal/breed" method="get">
+   <label for="breed">Search By Breed:</label>
+   <input type="text" name="breed">
+
+   <input type="submit" value="Search">
+  </form>
+
+  <form action="/animalshelter/animal/type" method="get">
+   <label for="type">Search By type:</label>
+   <input type="text" name="type">
+
+   <input type="submit" value="Search">
+
+  </form>
+  <% if @animals %>
+  <h2>Search Result</h2>
+
+  <table style="width:70%">
+    <tr>
+
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Type</th>
+      <th>Adoptable</th>
+      <th>Admission Date</th>
+      <th>Adopted</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% for animal in @animals %>
+        <tr>
+          <td><%= animal.name %></td>
+          <td><%= animal.breed %></td>
+          <td><%= animal.type %></td>
+          <td><% if animal.adoptable == "t" %> Yes <% else %> No <% end %></td>
+          <td><%= animal.admission_date %></td>
+          <td> <% if animal.owner_id != nil %> Yes <% else %> No <% end %></td>
+          <td><form action="/animalshelter/animal/<%= animal.id %>/delete" method="post">
+            <p><input type="submit" value="Delete Animal"></p>
+            </form></td>
+
+          <td><p><a class="button" href="/animalshelter/animal/<%= animal.id %>/edit"</a>Edit</p></td>
+        </tr>
+    <% end %>
+  </table>
+  <% end %>
+
+</div>
