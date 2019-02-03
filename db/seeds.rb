@@ -153,8 +153,8 @@ animal5 = Animal.new({
         animal10.owner_id = owner6.id
         animal10.assign_animal_to_owner()
         owner6.delete()
-        Animal.find_by_breed('Rattlesnake')
-        Animal.find_by_type('Goat')
+        Animal.find_by_breed('Jersey Cattle')
+        Animal.find_by_type('Dog')
 
 binding.pry
 nil

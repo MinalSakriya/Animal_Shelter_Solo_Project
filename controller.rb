@@ -88,16 +88,20 @@ post '/animalshelter/owner/:id/delete' do
   redirect('/animalshelter/owners')
 end
 
-get '/animalshelter/animal/breed' do
-  @animal = Animal.find_by_breed(params[:breed])
-  erb(:"animals/search")
-end
 
-get '/animalshelter/animal/type' do
-  @animal = Animal.find_by_type(params[:type])
-  erb(:"animals/search")
-end
-
+#The below method is just to see the initial page
 get '/search' do
+  erb(:"animals/search")
+end
+
+#Below gets called when the "breed" search button is pressed from the search.erb page
+get '/animalshelter/animal/breed' do
+  @animals = Animal.find_by_breed(params[:breed])
+  erb(:"animals/search")
+end
+
+#Below gets called when the "type" search button is pressed from the search.erb page
+get '/animalshelter/animal/type' do
+  @animals = Animal.find_by_type(params[:type])
   erb(:"animals/search")
 end

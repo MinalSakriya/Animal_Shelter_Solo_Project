@@ -61,6 +61,7 @@ class Owner
     SqlRunner.run(sql, values)
   end
 
+
   def delete()
     unadopt_animal()
     sql = "DELETE FROM owners WHERE id = $1"

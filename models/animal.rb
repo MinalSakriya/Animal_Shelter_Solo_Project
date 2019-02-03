@@ -79,17 +79,24 @@ class Animal
   def self.find_by_breed(breed)
     sql = "SELECT * FROM animals WHERE breed = $1"
     values = [breed]
-    breed_hash = SqlRunner.run(sql, values)
-    result = Animal.new(breed_hash.first)
-    return result
+    animals_by_breed = SqlRunner.run(sql, values)
+    return animals_by_breed.map{ |animal| Animal.new(animal)}
   end
 
+
+
+
   def self.find_by_type(type)
+    # Prepare SQL to select everything from animals by animal type e.g. cat, dog etc
+    # Run it against the database using SqlRunner
+    # the list of animals will be returned from database
+    # the list of animals is then converted into list of Animal objects
+    # The list of animal objects is returned
     sql = "SELECT * FROM animals WHERE type = $1"
     values = [type]
-    type_hash = SqlRunner.run(sql, values)
-    result = Animal.new(type_hash.first)
-    return result
+    animals_by_type = SqlRunner.run(sql, values)
+    return animals_by_type.map{ |animal| Animal.new(animal)}
+
   end
 
 
