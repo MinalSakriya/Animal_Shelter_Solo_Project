@@ -1,9 +1,9 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
 
 require_relative('./models/animal.rb')
 require_relative('./models/owner.rb')
-also_reload('./models/*')
+
 
 get '/animalshelter' do
   erb(:home)

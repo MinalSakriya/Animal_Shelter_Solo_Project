@@ -1,7 +1,7 @@
 require_relative('../models/animal.rb')
 require_relative('../models/owner.rb')
 
-require ('pry')
+
 
 Animal.delete_all()
 Owner.delete_all()
@@ -155,6 +155,3 @@ animal5 = Animal.new({
         owner6.delete()
         Animal.find_by_breed('Jersey Cattle')
         Animal.find_by_type('Dog')
-
-binding.pry
-nil
