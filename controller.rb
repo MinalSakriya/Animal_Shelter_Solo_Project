@@ -5,7 +5,7 @@ require_relative('./models/animal.rb')
 require_relative('./models/owner.rb')
 
 
-get '/animalshelter' do
+get '/' do
   erb(:home)
 end
 
