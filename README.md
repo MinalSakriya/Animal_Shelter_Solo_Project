@@ -5,7 +5,7 @@ The Scottish Animal Shelter accepts orphaned or stray animals and takes care of 
 
 They are looking for a management system to keep track of their animals and owners.
 
-MVP:
+# MVP:
 
 A list of all their animals and their admission date.
 
@@ -16,7 +16,7 @@ Assign an animal to a new owner.
 List all the owners and their adopted animals.
 
 
-Possible Extensions:
+# Possible Extensions:
 
 CRUD actions for animals/owners.
 
