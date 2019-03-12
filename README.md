@@ -7,21 +7,21 @@ They are looking for a management system to keep track of their animals and owne
 
 # MVP:
 
-A list of all their animals and their admission date.
+* A list of all their animals and their admission date.
 
-Mark an animal as being adoptable/not adoptable.
+* Mark an animal as being adoptable/not adoptable.
 
-Assign an animal to a new owner.
+* Assign an animal to a new owner.
 
-List all the owners and their adopted animals.
+* List all the owners and their adopted animals.
 
 
 # Possible Extensions:
 
-CRUD actions for animals/owners.
+* CRUD actions for animals/owners.
 
-Have separate pages for animals ready for adoption and ones still in training/vet care.
+* Have separate pages for animals ready for adoption and ones still in training/vet care.
 
-Search for animals by breed/type.
+* Search for animals by breed/type.
 
-Any other ideas you might come up with.
+* Any other ideas you might come up with.
